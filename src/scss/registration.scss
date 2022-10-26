@@ -1,0 +1,89 @@
+@import "base/mixin";
+.page-registration {
+    @import "template/form";
+}
+.banner-section {
+    @media (min-width: 768px) {
+        margin-bottom: 115px;
+    }
+    @media (max-width: 767px) {
+        margin-bottom: 58px;
+    }
+}
+.form-section {
+    margin-bottom: 140px;
+    @media (max-width: 767px) {
+        margin-bottom: 100px;
+    }
+    .wrap {
+        padding: 0 80px;
+        @media (max-width: 1200px) {
+            padding: 0;
+        }
+    }
+    .note {
+        color: $blue-l;
+        margin-bottom: 30px;
+    }
+    .btnwrap.small {
+        .btn {
+            span {
+                width: 25px;
+                @media (max-width: 767px) {
+                    background-size: 20px;
+                }
+                &.wallet {
+                    background: url(../images/icon_wallet.png) center/25px no-repeat;
+                    @media (max-width: 767px) {
+                        background-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .line {
+        width: 100%;
+        height: 1px;
+        background-color: #cccccc;
+        @media (min-width: 768px) {
+            margin: 40px auto 63px;
+        }
+        @media (max-width: 767px) {
+            margin: 40px auto 50px;
+        }
+    }
+    form {
+        .form-group {
+            &:first-child {
+                @media (min-width: 768px) {
+                    margin-bottom: 69px;
+                }
+                @media (max-width: 767px) {
+                    margin-bottom: 10px;
+                }
+            }
+            &:nth-child(2) {
+                @media (min-width: 768px) {
+                    margin-bottom: 49px;
+                }
+                @media (max-width: 767px) {
+                    margin-bottom: 55px;
+                }
+            }
+        }
+        .btnwrap {
+            span {
+                width: 24px;
+                @media (max-width: 767px) {
+                    background-size: 15px;
+                }
+                &.sign {
+                    background: url(../images/signin.png) center/24px no-repeat;
+                    @media (max-width: 767px) {
+                        background-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

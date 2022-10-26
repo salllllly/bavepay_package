@@ -1,0 +1,129 @@
+@import "base/mixin";
+.banner-section {
+    position: relative;
+    .bg {
+        .banner {
+            width: 100%;
+            // aspect-ratio: 1/0.2349;
+            background-position: center;
+            background-size: cover;
+            @media (min-width: 768px) {
+                height: 450px;
+            }
+            @media (max-width: 767px) {
+                // height: 274px;
+                aspect-ratio: 1/0.71354;
+            }
+        }
+    }
+    .container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        @media (min-width: 768px) {
+            top: 51%;
+        }
+        @media (max-width: 767px) {
+            top: 45%;
+        }
+        .main-title {
+            font-weight: 700;
+            @include font-size(pxToEm(30), pxToEm(44));
+        }
+    }
+    .yel-ball {
+        width: 17.552%;
+        aspect-ratio: 1/0.967;
+        position: absolute;
+        right: 0;
+        bottom: -54%;
+        background: url(../images/yel_ball04.png) center/contain no-repeat;
+        @media (max-width: 1200px) {
+            display: none;
+        }
+    }
+}
+//-------------------------font-------------------------//
+.fw7 {
+    font-weight: 700;
+}
+.fw5 {
+    font-weight: 500;
+}
+.f88-60 {
+    @include font-size(pxToEm(60), pxToEm(88), 0.8);
+}
+.f44-30 {
+    @include font-size(pxToEm(30), pxToEm(44));
+}
+.f36-25 {
+    @include font-size(pxToEm(25), pxToEm(36));
+}
+.f36-20 {
+    @include font-size(pxToEm(20), pxToEm(36));
+}
+.f30-20 {
+    @include font-size(pxToEm(20), pxToEm(30));
+}
+.f24 {
+    font-size: pxToEm(24);
+}
+.f24-18 {
+    @include font-size(pxToEm(18), pxToEm(24));
+}
+.f22-18 {
+    @include font-size(pxToEm(18), pxToEm(22));
+}
+.f18 {
+    font-size: pxToEm(18);
+}
+
+// .f14 {
+//     @include font-size(pxToEm(12), pxToEm(14));
+// }
+
+//-------------------------btn-------------------------//
+.btnwrap {
+    .btn {
+        display: flex;
+        justify-content: center;
+        width: 240px;
+        padding: 23px 0;
+        background-color: $black;
+        color: white;
+        border-radius: 35px;
+        margin: 0 auto;
+        @media (max-width: 767px) {
+            width: 200px;
+            padding: 18px 0;
+        }
+        span {
+            display: block;
+            width: 14px;
+            margin-left: 15px;
+            @media (max-width: 767px) {
+                margin-left: 5px;
+            }
+            &.more {
+                background: url(../images/icon_more.png) center/14px no-repeat;
+            }
+        }
+        &:hover {
+            @media (min-width: 768px) {
+                background-color: $blue;
+            }
+        }
+    }
+    &.small {
+        .btn {
+            width: 180px;
+            padding: 18px 0;
+            margin: 0 auto 0 0;
+        }
+    }
+}
+
+sup {
+    vertical-align: super;
+    font-size: 12px;
+}

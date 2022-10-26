@@ -1,72 +1,70 @@
-.form-group {
+.page-registration .form-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 @media (min-width: 768px) {
-  .form-group {
+  .page-registration .form-group {
     -webkit-box-align: baseline;
         -ms-flex-align: baseline;
             align-items: baseline;
   }
 }
 @media (max-width: 767px) {
-  .form-group {
+  .page-registration .form-group {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
 }
-
-.form-label {
+.page-registration .form-label {
   color: #2da9ef;
   font-weight: 700;
   min-width: 135px;
   padding-right: 20px;
 }
 @media (max-width: 1440px) {
-  .form-label {
+  .page-registration .form-label {
     font-size: 1.5rem;
   }
 }
 @media (max-width: 767px) {
-  .form-label {
+  .page-registration .form-label {
     font-size: 1.125rem;
   }
 }
 @media (min-width: 1441px) {
-  .form-label {
+  .page-registration .form-label {
     font-size: 1.5rem;
   }
 }
 @media (max-width: 767px) {
-  .form-label {
+  .page-registration .form-label {
     margin-bottom: 12px;
   }
 }
 @media (max-width: 1440px) {
-  .form-label i {
+  .page-registration .form-label i {
     font-size: 1.875rem;
   }
 }
 @media (max-width: 767px) {
-  .form-label i {
+  .page-registration .form-label i {
     font-size: 1.25rem;
   }
 }
 @media (min-width: 1441px) {
-  .form-label i {
+  .page-registration .form-label i {
     font-size: 1.875rem;
   }
 }
-
-.form-input {
+.page-registration .form-input {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
-.form-input small {
+.page-registration .form-input small {
   font-size: 0.875rem;
   color: #2da9ef;
   line-height: 1;
@@ -75,21 +73,19 @@
   opacity: 0;
 }
 @media (max-width: 767px) {
-  .form-input small {
+  .page-registration .form-input small {
     font-size: 0.75rem;
     margin-top: 5px;
   }
 }
-
-.req .form-input input {
+.page-registration .req .form-input input {
   border: 1px solid #2da9ef;
 }
-.req .form-input small {
+.page-registration .req .form-input small {
   opacity: 1;
 }
-
-input[type=text],
-input[type=email] {
+.page-registration input[type=text],
+.page-registration input[type=email] {
   width: 100%;
   font-size: 1rem;
   border-radius: 20px;
@@ -98,51 +94,47 @@ input[type=email] {
   background-color: #f6f6f6;
   font-family: "Lexend", "Noto Sans TC", sans-serif;
 }
-input[type=text]::-webkit-input-placeholder, input[type=email]::-webkit-input-placeholder {
+.page-registration input[type=text]::-webkit-input-placeholder, .page-registration input[type=email]::-webkit-input-placeholder {
   color: #999999;
 }
-input[type=text]::-moz-placeholder, input[type=email]::-moz-placeholder {
+.page-registration input[type=text]::-moz-placeholder, .page-registration input[type=email]::-moz-placeholder {
   color: #999999;
 }
-input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder {
+.page-registration input[type=text]:-ms-input-placeholder, .page-registration input[type=email]:-ms-input-placeholder {
   color: #999999;
 }
-input[type=text]::-ms-input-placeholder, input[type=email]::-ms-input-placeholder {
+.page-registration input[type=text]::-ms-input-placeholder, .page-registration input[type=email]::-ms-input-placeholder {
   color: #999999;
 }
-input[type=text]::placeholder,
-input[type=email]::placeholder {
+.page-registration input[type=text]::placeholder,
+.page-registration input[type=email]::placeholder {
   color: #999999;
 }
 @media (max-width: 767px) {
-  input[type=text],
-input[type=email] {
+  .page-registration input[type=text],
+.page-registration input[type=email] {
     padding: 14px 18px;
   }
 }
-
-input:not(:checked) ~ label:after {
+.page-registration input:not(:checked) ~ label:after {
   opacity: 0;
   -webkit-transform: scale(0);
   transform: scale(0);
 }
-
-input:checked ~ label:after {
+.page-registration input:checked ~ label:after {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
 }
-
-input[type=radio] {
+.page-registration input[type=radio] {
   display: none;
 }
-
-input[type=radio] ~ label {
+.page-registration input[type=radio] ~ label {
   position: relative;
   padding-left: 40px;
   cursor: pointer;
 }
-input[type=radio] ~ label::before {
+.page-registration input[type=radio] ~ label::before {
   content: "";
   position: absolute;
   left: 0;
@@ -154,7 +146,7 @@ input[type=radio] ~ label::before {
   border-radius: 5px;
   background-color: #eeeeee;
 }
-input[type=radio] ~ label::after {
+.page-registration input[type=radio] ~ label::after {
   content: "";
   background: url(../images/check.png) center/16px no-repeat;
   position: absolute;
@@ -167,21 +159,20 @@ input[type=radio] ~ label::after {
   transition: all 0.2s ease;
 }
 @media (max-width: 767px) {
-  input[type=radio] ~ label {
+  .page-registration input[type=radio] ~ label {
     padding-left: 35px;
   }
-  input[type=radio] ~ label::before {
+  .page-registration input[type=radio] ~ label::before {
     width: 24px;
     height: 24px;
   }
-  input[type=radio] ~ label::after {
+  .page-registration input[type=radio] ~ label::after {
     width: 16px;
     height: 12px;
     left: 3.5px;
   }
 }
-
-textarea {
+.page-registration textarea {
   width: 100%;
   font-size: 1rem;
   border-radius: 20px;
@@ -191,23 +182,23 @@ textarea {
   font-family: "Lexend", "Noto Sans TC", sans-serif;
   resize: none;
 }
-textarea::-webkit-input-placeholder {
+.page-registration textarea::-webkit-input-placeholder {
   color: #999999;
 }
-textarea::-moz-placeholder {
+.page-registration textarea::-moz-placeholder {
   color: #999999;
 }
-textarea:-ms-input-placeholder {
+.page-registration textarea:-ms-input-placeholder {
   color: #999999;
 }
-textarea::-ms-input-placeholder {
+.page-registration textarea::-ms-input-placeholder {
   color: #999999;
 }
-textarea::placeholder {
+.page-registration textarea::placeholder {
   color: #999999;
 }
 @media (max-width: 767px) {
-  textarea {
+  .page-registration textarea {
     padding: 14px 18px;
   }
 }

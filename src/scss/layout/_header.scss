@@ -1,0 +1,434 @@
+@import "base/mixin";
+.navbar {
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.4s ease;
+    @include pc-header {
+        background-color: white;
+        width: calc(100% - 5.2vw);
+        height: $headH-pc;
+        padding: 0 2.6vw 0 2vw;
+        box-shadow: 0 0 18.4px 1.6px rgba(221, 221, 221, 0.5);
+        border-radius: 45px;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @include sp-header {
+        width: 100%;
+        height: $headH-mo;
+        top: 0;
+        left: 0;
+        // position: relative;
+        background-color: transparent;
+        &::after {
+            content: "";
+            width: 95vw;
+            height: 45px;
+            background-color: #fff;
+            box-shadow: 0 0 9.2px 0.8px rgba(221, 221, 221, 0.5);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 15px;
+            border-radius: 45px;
+            z-index: 1;
+        }
+        &.open {
+            .container__menu {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: initial;
+            }
+            .container__member {
+                display: block;
+            }
+            .container__burger {
+                span {
+                    background: rgba(255, 255, 255, 0);
+                    width: 20px;
+                    height: 2px;
+                    &::after {
+                        width: 20px;
+                        transform: rotate(-45deg);
+                        -webkit-transform: rotate(-45deg);
+                        bottom: 0px;
+                        background: #404040;
+                        height: 2px;
+                    }
+                    &::before {
+                        width: 20px;
+                        transform: rotate(45deg);
+                        -webkit-transform: rotate(45deg);
+                        top: 0px;
+                        background: #404040;
+                        height: 2px;
+                    }
+                }
+            }
+        }
+    }
+    .container {
+        &__logo {
+            z-index: 2;
+            a {
+                display: inline-block;
+                width: 188px;
+                height: 30px;
+                position: relative;
+                @include sp-header {
+                    width: 113px;
+                    height: 18px;
+                }
+            }
+            embed {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                pointer-events: none;
+                // @include sp-header {
+                //     width: 113px;
+                //     height: 18px;
+                // }
+            }
+            @include sp-header {
+                margin-top: 33px;
+                margin-left: 6.6vw;
+            }
+        }
+        &__menu {
+            @include pc-header {
+                flex-grow: 2;
+                display: flex;
+                justify-content: flex-end;
+                height: 100%;
+            }
+            @include sp-header {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100vw;
+                height: 100vh;
+                overflow-y: auto;
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transition: 0.4s ease;
+                background-color: #fff;
+                // padding: 12vh 40px 0 10.4vw;
+                padding-top: 11vh;
+            }
+            .menu__wrap {
+                display: flex;
+                align-items: center;
+                @include sp-header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+            }
+            .menu__title {
+                position: relative;
+                height: 100%;
+                > a {
+                    color: #404040;
+                    display: block;
+                    font-size: pxToEm(16);
+                    @include pc-header {
+                        line-height: $headH-pc;
+                    }
+                    @include sp-header {
+                        padding: 20px 10.4vw;
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: -15px;
+                        width: 100%;
+                        height: 15px;
+                    }
+                }
+                &.active {
+                    @include pc-header {
+                        > a {
+                            color: #1b9cff;
+                        }
+                    }
+                    .menu__sub {
+                        opacity: 1;
+                        visibility: visible;
+                        pointer-events: initial;
+                    }
+                }
+                &:hover {
+                    @media (min-width: 768px) {
+                        > a {
+                            color: #1b9cff;
+                        }
+                    }
+                }
+                @include pc-header {
+                    margin-right: 2.6vw;
+                }
+                @include sp-header {
+                    width: 100%;
+                    &.active {
+                        &::after {
+                            display: none;
+                        }
+                    }
+                    &::after {
+                        content: "";
+                        width: 90%;
+                        height: 1px;
+                        background-color: #dddddd;
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                    &.mit {
+                        background: url(../images/arrow_up.png) top 30px right 10%/13px no-repeat;
+                    }
+                    &.mit.active {
+                        background: url(../images/arrow_down.png) top 30px right 10%/13px no-repeat;
+                    }
+                }
+            }
+            .menu__sub {
+                z-index: 1;
+                display: flex;
+                @include pc-header {
+                    position: absolute;
+                    max-width: 500px;
+                    width: max-content;
+                    border-radius: 20px;
+                    padding: 21px 30px;
+                    top: 105px;
+                    left: -21px;
+                    opacity: 0;
+                    visibility: hidden;
+                    pointer-events: none;
+                    flex-wrap: wrap;
+                    z-index: -1;
+                    transition: 0.4s ease;
+                    background-color: #f6f6f6;
+                    box-shadow: 0 0 18.4px 1.6px rgba(221, 221, 221, 0.5);
+                }
+                @include sp-header {
+                    flex-direction: column;
+                    background-color: #f6f6f6;
+                    padding: 20px 10.4vw;
+                    display: none;
+                }
+                li {
+                    @include pc-header {
+                        &:not(:last-child) {
+                            margin-bottom: 10px;
+                        }
+                    }
+                    @include sp-header {
+                        &:not(:last-child) {
+                            margin-bottom: 12px;
+                        }
+                    }
+                    a {
+                        display: block;
+                        // min-width: 100px;
+                        max-width: 180px;
+                        color: #5d5b5b;
+                    }
+                    &.active {
+                        a {
+                            color: $blue;
+                        }
+                    }
+                    &:hover {
+                        @media (min-width: 768px) {
+                            a {
+                                color: $blue;
+                            }
+                        }
+                    }
+                }
+                //會員專區
+                &.member-sub {
+                    .menu__sub__wrap:first-child {
+                        @include pc-header {
+                            margin-bottom: 0px;
+                        }
+                        @include sp-header {
+                            margin-bottom: 20px;
+                        }
+                    }
+                    .line {
+                        width: 1px;
+                        height: auto;
+                        background-color: #dddddd;
+                        @include pc-header {
+                            margin: 0 30px;
+                        }
+                        @include sp-header {
+                            display: none;
+                        }
+                    }
+                    .wrap-title {
+                        @include font-size(pxToEm(17), pxToEm(18));
+                        font-weight: 700;
+                        margin-bottom: 22px;
+                        @include sp-header {
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        &__member {
+            @include sp-header {
+                display: none;
+                position: fixed;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 20px 15px;
+                background-color: #fff;
+                box-shadow: 0 0 18.4px 1.6px rgba(221, 221, 221, 0.5);
+                width: 100%;
+            }
+            ul {
+                display: flex;
+                align-items: center;
+                @include sp-header {
+                    justify-content: center;
+                }
+                li:first-child {
+                    margin-right: 0.9vw;
+                    @include sp-header {
+                        margin-right: 10px;
+                    }
+                }
+                .signinbtn,
+                .logoutbtn {
+                    background-color: #404040;
+                    &:hover {
+                        @media (min-width: 768px) {
+                            background-color: #1b9cff;
+                        }
+                    }
+                }
+                .loginbtn {
+                    background-color: #ef9500;
+                    &:hover {
+                        @media (min-width: 768px) {
+                            background-color: #ef8500;
+                        }
+                    }
+                }
+                a {
+                    display: block;
+                    width: 140px;
+                    height: 48px;
+                    line-height: 48px;
+                    text-align: center;
+                    font-weight: 700;
+                    color: white;
+                    border-radius: 24px;
+                    @media (max-width: 1200px) {
+                        width: 100px;
+                    }
+                    @include sp-header {
+                        width: 165px;
+                    }
+                }
+            }
+            &:hover {
+                @media (min-width: 768px) {
+                    .circle {
+                        background-color: black;
+                        box-shadow: 0 0 0 1px #ffb500;
+                    }
+                    .f16 {
+                        color: #ffb500;
+                    }
+                }
+            }
+        }
+        &__sign {
+            @include pc-header {
+                display: none;
+            }
+            @include sp-header {
+                z-index: 10;
+                flex-grow: 2;
+                a {
+                    display: block;
+                    width: 70px;
+                    height: 30px;
+                    line-height: 30px;
+                    background-color: #404040;
+                    text-align: center;
+                    color: white;
+                    border-radius: 30px;
+                    margin-top: 30px;
+                    margin-left: auto;
+                    margin-right: 14px;
+                    font-size: pxToEm(14);
+                }
+            }
+        }
+        &__burger {
+            @include sp-header {
+                .burger {
+                    position: relative;
+                    width: 40px;
+                    height: 40px;
+                    cursor: pointer;
+                    margin-top: 30px;
+                    margin-right: 6.6vw;
+                    z-index: 10;
+                }
+                span {
+                    position: absolute;
+                    background: #404040;
+                    width: 20px;
+                    height: 2px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    opacity: 1;
+                    transition: all 0.3s ease-in-out;
+                    &::before {
+                        position: absolute;
+                        background: #404040;
+                        width: 20px;
+                        height: 2px;
+                        top: 6px;
+                        right: 0;
+                        content: "";
+                        display: block;
+                        transition: all 0.3s ease-in-out;
+                        border-radius: 2px;
+                    }
+                    &::after {
+                        position: absolute;
+                        background: #404040;
+                        width: 20px;
+                        height: 2px;
+                        bottom: 6px;
+                        right: 0;
+                        content: "";
+                        display: block;
+                        transition: all 0.3s ease-in-out;
+                        border-radius: 2px;
+                    }
+                }
+            }
+        }
+    }
+}

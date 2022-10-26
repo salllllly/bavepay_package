@@ -1,0 +1,116 @@
+@import "base/mixin";
+
+$lr_btn: 10px;
+
+%list_a {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: pxToEm(18);
+    clear: both;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    dt,
+    dd {
+        vertical-align: baseline;
+        display: inline-block;
+        text-align: center;
+        a {
+            display: block;
+            height: 30px;
+            line-height: 30px;
+            text-decoration: none;
+            color: #999999;
+            font-weight: 700;
+        }
+    }
+
+    dd {
+        width: 4%;
+        position: relative;
+        &:hover {
+            @media (min-width: 768px) {
+                a {
+                    color: $blue;
+                }
+            }
+        }
+    }
+    dd.active {
+        a {
+            color: $blue;
+        }
+    }
+
+    dt.rtbn a,
+    dt.ltbn a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 0 auto;
+        padding: 10px 0;
+        transition: 0.4s;
+    }
+
+    .nopage {
+        filter: grayscale(1);
+        pointer-events: none;
+        opacity: 0.3;
+    }
+
+    dt.ltbn a {
+        margin-right: $lr_btn;
+        &::before {
+            content: "";
+            width: 12px;
+            height: 24px;
+            display: block;
+
+            background: url(../images/prev.png) center/contain no-repeat;
+            transition: 0.4s ease;
+        }
+        @media (min-width: 768px) {
+            &:hover {
+                &::before {
+                    background: url(../images/prev_hover.png) center/contain no-repeat;
+                }
+            }
+        }
+    }
+
+    dt.rtbn a {
+        margin-left: $lr_btn;
+        &::before {
+            content: "";
+            width: 12px;
+            height: 24px;
+            display: block;
+            margin-left: auto;
+            background: url(../images/next.png) center/contain no-repeat;
+            transition: 0.4s ease;
+        }
+        @media (min-width: 768px) {
+            &:hover {
+                &::before {
+                    background: url(../images/next_hover.png) center/contain no-repeat;
+                }
+            }
+        }
+    }
+    @media (max-width: 991px) {
+        text-align: center;
+        justify-content: center;
+        dd {
+            width: 14%;
+        }
+    }
+}

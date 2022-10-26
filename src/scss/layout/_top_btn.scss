@@ -1,0 +1,33 @@
+@import "base/mixin";
+.top_btn {
+    position: fixed;
+    right: 35px;
+    bottom: 90px;
+    cursor: pointer;
+    width: 78px;
+    height: 78px;
+    background: url(../images/top.png) center/contain no-repeat;
+    transition: 0.4s ease;
+    opacity: 0;
+    z-index: 100;
+    @media (max-width: 767px) {
+        background: url(../images/top_mb.png) center/contain no-repeat;
+        width: 60px;
+        height: 60px;
+        right: 20px;
+        bottom: 60px;
+    }
+    &.show {
+        opacity: 1;
+    }
+    &.nonfixed {
+        @media (max-width: 767px) {
+            bottom: 120px;
+        }
+    }
+    &:hover {
+        @media (min-width: 768px) {
+            background: url(../images/top_hover.png) center/contain no-repeat;
+        }
+    }
+}
