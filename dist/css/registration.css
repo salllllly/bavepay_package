@@ -1,0 +1,312 @@
+.form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (min-width: 768px) {
+  .form-group {
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+}
+@media (max-width: 767px) {
+  .form-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.form-label {
+  color: #2da9ef;
+  font-weight: 700;
+  min-width: 135px;
+  padding-right: 20px;
+}
+@media (max-width: 1440px) {
+  .form-label {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .form-label {
+    font-size: 1.125rem;
+  }
+}
+@media (min-width: 1441px) {
+  .form-label {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .form-label {
+    margin-bottom: 12px;
+  }
+}
+@media (max-width: 1440px) {
+  .form-label i {
+    font-size: 1.875rem;
+  }
+}
+@media (max-width: 767px) {
+  .form-label i {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 1441px) {
+  .form-label i {
+    font-size: 1.875rem;
+  }
+}
+
+.form-input {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.form-input small {
+  font-size: 0.875rem;
+  color: #2da9ef;
+  line-height: 1;
+  display: block;
+  margin-top: 13px;
+  opacity: 0;
+}
+@media (max-width: 767px) {
+  .form-input small {
+    font-size: 0.75rem;
+    margin-top: 5px;
+  }
+}
+
+.req .form-input input {
+  border: 1px solid #2da9ef;
+}
+.req .form-input small {
+  opacity: 1;
+}
+
+input[type=text],
+input[type=email] {
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: none;
+  padding: 20px 24px;
+  background-color: #f6f6f6;
+  font-family: "Lexend", "Noto Sans TC", sans-serif;
+}
+input[type=text]::-webkit-input-placeholder, input[type=email]::-webkit-input-placeholder {
+  color: #999999;
+}
+input[type=text]::-moz-placeholder, input[type=email]::-moz-placeholder {
+  color: #999999;
+}
+input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder {
+  color: #999999;
+}
+input[type=text]::-ms-input-placeholder, input[type=email]::-ms-input-placeholder {
+  color: #999999;
+}
+input[type=text]::placeholder,
+input[type=email]::placeholder {
+  color: #999999;
+}
+@media (max-width: 767px) {
+  input[type=text],
+input[type=email] {
+    padding: 14px 18px;
+  }
+}
+
+input:not(:checked) ~ label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+input:checked ~ label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio] ~ label {
+  position: relative;
+  padding-left: 40px;
+  cursor: pointer;
+}
+input[type=radio] ~ label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  background-color: #eeeeee;
+}
+input[type=radio] ~ label::after {
+  content: "";
+  background: url(../images/check.png) center/16px no-repeat;
+  position: absolute;
+  width: 16px;
+  height: 12px;
+  left: 5px;
+  top: 5px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+@media (max-width: 767px) {
+  input[type=radio] ~ label {
+    padding-left: 35px;
+  }
+  input[type=radio] ~ label::before {
+    width: 24px;
+    height: 24px;
+  }
+  input[type=radio] ~ label::after {
+    width: 16px;
+    height: 12px;
+    left: 3.5px;
+  }
+}
+
+textarea {
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: none;
+  padding: 20px 24px;
+  background-color: #f6f6f6;
+  font-family: "Lexend", "Noto Sans TC", sans-serif;
+  resize: none;
+}
+textarea::-webkit-input-placeholder {
+  color: #999999;
+}
+textarea::-moz-placeholder {
+  color: #999999;
+}
+textarea:-ms-input-placeholder {
+  color: #999999;
+}
+textarea::-ms-input-placeholder {
+  color: #999999;
+}
+textarea::placeholder {
+  color: #999999;
+}
+@media (max-width: 767px) {
+  textarea {
+    padding: 14px 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .banner-section {
+    margin-bottom: 115px;
+  }
+}
+@media (max-width: 767px) {
+  .banner-section {
+    margin-bottom: 58px;
+  }
+}
+
+.form-section {
+  margin-bottom: 140px;
+}
+@media (max-width: 767px) {
+  .form-section {
+    margin-bottom: 100px;
+  }
+}
+.form-section .wrap {
+  padding: 0 80px;
+}
+@media (max-width: 1200px) {
+  .form-section .wrap {
+    padding: 0;
+  }
+}
+.form-section .note {
+  color: #2da9ef;
+  margin-bottom: 30px;
+}
+.form-section .btnwrap.small .btn span {
+  width: 25px;
+}
+@media (max-width: 767px) {
+  .form-section .btnwrap.small .btn span {
+    background-size: 20px;
+  }
+}
+.form-section .btnwrap.small .btn span.wallet {
+  background: url(../images/icon_wallet.png) center/25px no-repeat;
+}
+@media (max-width: 767px) {
+  .form-section .btnwrap.small .btn span.wallet {
+    background-size: 20px;
+  }
+}
+.form-section .line {
+  width: 100%;
+  height: 1px;
+  background-color: #cccccc;
+}
+@media (min-width: 768px) {
+  .form-section .line {
+    margin: 40px auto 63px;
+  }
+}
+@media (max-width: 767px) {
+  .form-section .line {
+    margin: 40px auto 50px;
+  }
+}
+@media (min-width: 768px) {
+  .form-section form .form-group:first-child {
+    margin-bottom: 69px;
+  }
+}
+@media (max-width: 767px) {
+  .form-section form .form-group:first-child {
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 768px) {
+  .form-section form .form-group:nth-child(2) {
+    margin-bottom: 49px;
+  }
+}
+@media (max-width: 767px) {
+  .form-section form .form-group:nth-child(2) {
+    margin-bottom: 55px;
+  }
+}
+.form-section form .btnwrap span {
+  width: 24px;
+}
+@media (max-width: 767px) {
+  .form-section form .btnwrap span {
+    background-size: 15px;
+  }
+}
+.form-section form .btnwrap span.sign {
+  background: url(../images/signin.png) center/24px no-repeat;
+}
+@media (max-width: 767px) {
+  .form-section form .btnwrap span.sign {
+    background-size: 15px;
+  }
+}
