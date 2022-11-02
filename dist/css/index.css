@@ -543,13 +543,13 @@ main .apply-section .bg {
 }
 @media (min-width: 1298px) {
   main .apply-section .bg {
-    top: 6%;
+    bottom: 0vw;
   }
 }
 @media (max-width: 1297px) and (min-width: 992px) {
   main .apply-section .bg {
-    width: 62vw;
-    bottom: 0;
+    width: 60%;
+    bottom: 10vw;
   }
 }
 @media (max-width: 991px) {

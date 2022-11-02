@@ -392,18 +392,17 @@ main {
             transform: translateX(-50%);
             z-index: -1;
             @media (min-width: 1298px) {
-                top: 6%;
+                bottom: 0vw;
             }
             @media (max-width: 1297px) and (min-width: 992px) {
-                width: 62vw;
-                // top: 10vw;
-                bottom: 0;
+                // width: 62vw;
+                width: 60%;
+                bottom: 10vw;
             }
             @media (max-width: 991px) {
                 width: 100%;
                 bottom: 18%;
             }
-
             @media (max-width: 767px) {
                 bottom: 11%;
             }
